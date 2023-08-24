@@ -6,7 +6,6 @@
 using namespace std;
 const int size0 = 3;
 
-
 int check_b(char alpa)
 {
     if (alpa == 'O') return 1;
@@ -20,11 +19,8 @@ int solution(vector<string> board) {
     int _num = 0;
     int x_num[4] = { 0 };
     int y_num[4] = { 0 };
-    int win[2] = { -1,-1 };
     int check_x_o[2] = {0};
-    int cross_a = 2;
-    int cross_b = 0;
-   
+  
     for (int y = 0; y < size0; ++y)
     {
         for (int x = 0; x < size0; ++x)
@@ -35,45 +31,27 @@ int solution(vector<string> board) {
             y_num[cur_in / 3] += cur;
             x_num[cur_in % 3] += cur;
             _num += cur;
-
-            if (cur_in == cross_a)
-            {
-                x_num[3] += cur;
-                cross_a += 2;
-            }
-
-            if (cur_in == cross_b)
-            {
-                y_num[3] += cur;
-                cross_b += 4;
-            }
         }
     }
-
+    
+    x_num[3] = check_b(board[0][2]) + check_b(board[1][1]) + check_b(board[2][0]);
+    y_num[3] = check_b(board[0][0]) + check_b(board[1][1]) + check_b(board[2][2]);
+    
     if (_num < 0 || _num > 1) return 0; 
     check_x_o[_num] = 1;
 
-    
     for (int i = 0; i <= size0; ++i) //가로세로에 대하여
-    {
+    {       
         if(abs(x_num[i])/3)
-        {
-            //cout << check_x_o[x_num[i]/3 + 1]; 
-            
-            if(check_x_o[(x_num[i]/3 + 1)/2] == 0)
-              return 0;
+        {  
+            if(check_x_o[(x_num[i]/3 + 1)/2] == 0) return 0;
         }
 
         if(abs(y_num[i])/3)
         {
-           // cout << check_x_o[(y_num[i]/3) + 1] << "\n"; 
-            
-            if(check_x_o[(y_num[i]/3 + 1)/2] == 0)
-              return 0;
-            
+            if(check_x_o[(y_num[i]/3 + 1)/2] == 0) return 0;
         }
     }
-    
     return 1;
 }
 
