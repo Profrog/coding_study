@@ -38,15 +38,9 @@ int solution_1(vector<string>& maps, int y , int x)
 vector<int> solution(vector<string> maps) {
 
     for(int y = 0 ; y < maps.size() ; ++y)
-    {
         for(int x = 0 ; x < maps[y].size() ; ++x)
-        {
             if(maps[y][x] != 'X')
-            {
                answer.push_back(solution_1(maps, y, x));  
-            }
-        }
-    }
 
     if(answer.empty())
      answer.push_back(-1);
