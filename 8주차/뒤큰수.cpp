@@ -1,15 +1,13 @@
 #include <string>
 #include <vector>
-#include <deque>
 
 using namespace std;
-
 
 vector<int> solution(vector<int> numbers) {
 
     vector<int> answer(numbers.size(), -1);
-    deque<int> exam(1, numbers[0]);
-    deque<int> exam_index(1, 0);
+    vector<int> exam(1, numbers[0]);
+    vector<int> exam_index(1, 0);
 
     int count = 0;
     for (int i = 1; i < numbers.size(); ++i)
