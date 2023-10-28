@@ -1,7 +1,7 @@
 # coding_study
 
-<주차 참여>
-제출 방법1
+<주차 참여> <br>
+제출 방법1 
  문제풀이 사이트 통과 코드를 coding study 레파지토리에 업로드
  (방장과의 얘기 후 collaborator 등록 필요)
 
