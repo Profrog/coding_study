@@ -6,7 +6,8 @@
  (방장과의 얘기 후 collaborator 등록 필요)
 
 제출 방법2
- ![image](https://github.com/Profrog/coding_study/assets/26535065/c5a6b55a-19f8-4f37-a8d2-e412e6a96f48)
+![image](https://github.com/Profrog/coding_study/assets/26535065/2d04c776-9720-4a58-91cd-b5bf9ba967ac)
+
  다음과 같은 방식으로 문제 통과 스크린샷을 톡방에 올림
 
 제출 방법 1,2중 택 1 방식으로 주차 참여 가능
