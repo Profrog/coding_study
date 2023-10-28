@@ -7,6 +7,7 @@
 
 제출 방법2
 ![image](https://github.com/Profrog/coding_study/assets/26535065/2d04c776-9720-4a58-91cd-b5bf9ba967ac)
+(코드는 사진에 안나오게 부탁드립니다)
 
  다음과 같은 방식으로 문제 통과 스크린샷을 톡방에 올림
 
