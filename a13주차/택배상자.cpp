@@ -8,20 +8,16 @@ using namespace std;
 queue<int> origin;
 stack<int> temp;
 
-
-void make_datastack(int alpa)
+bool make_datastack()
 {
-    while(origin.size())
+    if (origin.size())
     {
-        if (origin.front() < alpa)
-        {
-            temp.push(origin.front());
-            origin.pop();
-        }
-
-        else
-            break;
+        temp.push(origin.front());
+        origin.pop();
+        return true;
     }
+
+    return false;
 }
 
 int solution(vector<int> order) {
@@ -34,40 +30,17 @@ int solution(vector<int> order) {
 
     for (int i = 0; i < order.size(); ++i)
     {
-        if (origin.size() && origin.front() == order[i])
-        {
-            ++answer;
-            origin.pop();
-            continue;
-        }
+        if (temp.empty())
+            if (!make_datastack())
+                return answer;
 
-        if (temp.size() && temp.top() == order[i])
-        {
-            ++answer;
-            temp.pop();
-            continue;
-        }
-        
-  
-        make_datastack(order[i]);
-            //cout << order[i] << " " << temp.top();
-    
 
-        if (temp.size() && temp.top() == order[i])
-        {
-            ++answer;
-            temp.pop();
-            continue;
-        }
-
-        if (origin.size() && origin.front() == order[i])
-        {
-            ++answer;
-            origin.pop();
-            continue;
-        }
- 
-        break;
+        while (temp.top() != order[i])
+            if (!make_datastack())
+                return answer;
+                   
+        temp.pop();
+        ++answer;
     }
 
     return answer;
