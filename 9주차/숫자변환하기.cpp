@@ -3,11 +3,24 @@
 #include <queue>
 using namespace std;
 
+int y0;
+queue<int> liner; //1.x의 변형값을 가진 원소를 저장하는 리스트
+vector<int> check(10000001, 1);
 
-queue<int> liner;
-vector<int> check(1000001, 1);
 
-int solution_1(int x,int n, int level)
+bool check_consistency(int elem) //2.bfs를 통해 변형값이 y랑 일치하는 지 검사하며 변형값의 변형값을 리스트에 갱신
+{
+    if (elem <= y0 && check[elem])
+    {
+        check[elem] = 0;
+        liner.push(elem);
+        return true;
+    }
+
+    return false;
+}
+
+int bfs_1(int x, int n, int level)
 {
     if (liner.empty())
     {
@@ -15,45 +28,27 @@ int solution_1(int x,int n, int level)
     }
 
     int alpa = liner.size();
-    for(int i = 0; i < alpa; ++i)
+    for (int i = 0; i < alpa; ++i)
     {
         int elem = liner.front();
         liner.pop();
 
-        if (elem == x)
+        if (elem == y0) //3.y랑 변형값이 일치하면 현재 bfs의 depth를 반환
         {
             return level;
         }
-
-        if (elem < 1)
-            continue;
-
-        if (elem % 2 == 0 && check[elem / 2])
-        {
-            check[elem / 2] = 0;
-            liner.push(elem / 2);
-        }
-
-        if (elem % 3 == 0 && check[elem / 3])
-        {
-            check[elem / 3] = 0;
-            liner.push(elem / 3);
-        }
-
-        if (elem - n > 0 && check[elem-n])
-        {
-            check[elem - n] = 0;
-            liner.push(elem - n);
-        }
+        check_consistency(elem * 2);
+        check_consistency(elem * 3);
+        check_consistency(elem + n);
     }
 
-    return solution_1(x, n, level + 1);
+    return bfs_1(x, n, level + 1);
 }
 
 
 int solution(int x, int y, int n) {
-    int answer = 0;
-
-    liner.push(y);
-    return solution_1(x,n,0);
+    
+    y0 = y;
+    liner.push(x);
+    return bfs_1(x, n, 0);
 }
