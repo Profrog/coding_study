@@ -30,7 +30,7 @@ int dfs_maker(int gamma)
 int solution(int n, vector<vector<int>> wires) {
     int answer = 1000;
 
-    for (int i = 0; i < wires.size(); ++i)
+    for (int i = 0; i < wires.size(); ++i) //1.주어진 간선 정보로 트리(그래프)를 만든다.
     {
         line_data[wires[i][0]].push_back(wires[i][1]);
         line_data[wires[i][1]].push_back(wires[i][0]);
@@ -39,8 +39,8 @@ int solution(int n, vector<vector<int>> wires) {
     for (int i = 0; i < wires.size(); ++i)
     {
         value_data = vector<int>(101, 0);
-        alpa = wires[i][0]; beta0 = wires[i][1];
-        answer = min(answer, abs(dfs_maker(alpa) - dfs_maker(beta0)));
+        alpa = wires[i][0]; beta0 = wires[i][1]; 
+        answer = min(answer, abs(dfs_maker(alpa) - dfs_maker(beta0))); //2.간선을 하나씩 끊어서 dfs로 분리된 트리의 depth를 확인하고 a,b 트리의 연결된 노드 개수 차가 가장 작은 것을 반환한다.
     }
 
     return answer;
