@@ -28,7 +28,7 @@ int solution(int n, int k) {
     long data0 = 0;
     long stair0 = 0;
 
-    while (n) //0과 0사이에 있는 수들 모음
+    while (n) //1.k진수로 변환하면서 낮은 자리의 수부터 0 혹은 공백에 둘러싸여 있으면 소수 판별 리스트에 넣는다.
     {
         int alpa = n % k;
         n /= k;
@@ -54,10 +54,8 @@ int solution(int n, int k) {
         data0 = 0; stair0 = 0;
     }
 
-    for (auto i = control_list.begin(); i != control_list.end(); ++i) //소수의 개수 세기
+    for (auto i = control_list.begin(); i != control_list.end(); ++i) //2.소수 판별 리스트의 수 중 소수인 수를 발견하면 반환값을 1씩 증가한다.
     {
-        //cout << *i << " "; 
-
         if (check_prime(*i))
             ++answer;
     }
