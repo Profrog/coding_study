@@ -13,16 +13,11 @@ double s01;
 double m01;
 double h01;
 
-int timer_check(double alpa, double beta, int mode)
-{
-    if (alpa == beta)
-        return 0;
 
-    return (alpa > beta)? 1 : -1;
-}
-
-void control_timer_1(int t,int t_index)
+int control_timer_1(double s0, double beta,int t_index) //2.c를 고려하여 초침과 다른 침이 만나면 반환 값을 1올린다
 {
+   int t =  (s0 == beta) ? 0 : (s0 > beta)? 1 : -1; 
+    
     if ((int)s01 % 60 == 0)
     {
         if (t == 0)
@@ -34,19 +29,18 @@ void control_timer_1(int t,int t_index)
 
     else if (t == 1 && t_check[t_index] < 0)
         ++answer;
+    
+    return t;
 }
 
 void control_timer()
 {
-    int t0 = timer_check(s01, m01, 0); //초침이 분침을 넘겼는지
-    int t1 = timer_check(s01, h01, 1); //초침이 시침을 넘겼는지
-  
-    control_timer_1(t0, 0);
-    control_timer_1(t1, 1);
+    int t0 = control_timer_1(s01, m01, 0);
+    int t1 = control_timer_1(s01, h01, 1);
 
     (m01 == h01)? --answer: 0;
 
-    if (s01 != 60)
+    if (s01 != 60) //3.1.에서 비교를 위해 1초전의 위치값은 저장한다.
     {
         t_check[0] = t0;
         t_check[1] = t1;
@@ -69,7 +63,7 @@ int solution(int h1, int m1, int s1, int h2, int m2, int s2) {
 
     answer = 0;
     cur_time = 3600 * h1 + 60 * m1 + s1;
-    future_time = 3600 * h2 + 60 * m2 + s2;
+    future_time = 3600 * h2 + 60 * m2 + s2; //1.시간으로 1초로 기준으로 변환한뒤 그 사이에서 분침, 시침의 위치도 a를 고려하여 1초 단위로 변환한다
 
     for (int i = cur_time; i <= future_time; ++i, ++s1)
     {
