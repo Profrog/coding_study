@@ -7,7 +7,7 @@ using namespace std;
 vector<int> original_data;
 vector<double> space_data;
 
-int make_squence(int alpa)
+int collatz_graph(int alpa) //1.collaz 추측에 의거한 점 간 사이의 영역을 시작점을 index로 갖는 리스트 형태로 저장한다.
 {
     int beta;
 
@@ -28,13 +28,13 @@ int make_squence(int alpa)
 
     space_data.push_back(double(original_data.back() + beta) / 2);
     original_data.push_back(beta);
-    return make_squence(beta);
+    return collatz_graph(beta);
 }
 
 vector<double> solution(int k, vector<vector<int>> ranges) {
 
     original_data.push_back(k);
-    make_squence(k);
+    collatz_graph(k);
     vector<double> answer;
 
     for (int x = 0; x < ranges.size(); ++x)
@@ -48,9 +48,9 @@ vector<double> solution(int k, vector<vector<int>> ranges) {
             answer.push_back(-1);
         }
 
-        else
+        else //3. a > b + n - 1일 시 -1을 return 한다.
         {
-            for (int y = s_index; y < e_index; ++y)
+            for (int y = s_index; y < e_index; ++y) //2.[a,b]구간의 영역의 합을 b에 의거하여 넓이의 합으로 구한다.
             {
                 answer0 += space_data[y];
             }
