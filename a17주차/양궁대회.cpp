@@ -16,20 +16,20 @@ double alpa = 0;
 
 int calcul_level(int n, vector<int>& info, int mode)
 {
-    int answer0 = 0;
-    int answer1 = 0;
+    int case_control = 0;
+    int get_score = 0;
     int index = 10;
     double precision_0 = 0.1;
     alpa = 0;
 
     while (index >= 0)
     {
-        answer0 += ((n % 2) > 0 ? info[index] + 1 : 0);
-        answer1 += ((n % 2) > 0 ? 10 - index : 0);
+        case_control += ((n % 2) > 0 ? info[index] + 1 : 0);
+        get_score += ((n % 2) > 0 ? 10 - index : 0);
         alpa += ((n % 2) > 0 ? info[index] + 1 : 0) * precision_0;
         precision_0 *= 0.1;
 
-        if (mode)
+        if (mode == 1)
         {
             answer[index] = ((n % 2) > 0 ? info[index] + 1 : 0);
         }
@@ -38,18 +38,18 @@ int calcul_level(int n, vector<int>& info, int mode)
         --index;
     }
 
-    alpa += (n0 - answer0) * 0.1;
+    alpa += (n0 - case_control) * 0.1;
 
-    if (mode)
+    if (mode == 1)
     {
-        answer.back() += (n0 - answer0);
+        answer.back() += (n0 - case_control);
     }
 
-    if (mode < 0)
-        return answer1;
+    if (mode == -1)
+        return get_score;
 
     else
-        return answer0;
+        return case_control;
 }
 
 
@@ -64,9 +64,9 @@ vector<int> solution(int n, vector<int> info) {
         appch += ((info[i] > 0) ? 1 : 0) * pow(2, 10 - i);
     }
 
-    for (int i = 0; i < pow(2, 11); ++i)
+    for (int i = 0; i < pow(2, 11); ++i) //1.라이언이 해당 데이터를 취득하는 경우의 수(a에 따라)를 10자리의 2진법 수로 표현한다.
     {
-        if (calcul_level(i, info, 0) <= n)
+        if (calcul_level(i, info, 0) <= n) //2.취득 경우의 수가 라이언이 가진 화살 이하라면 실현 가능한 경우의 수로 관리한다. 높은 점수의 화살일 수록 우선순위를 둔다.(최소한의 화살로 이기고 남은 화살을 가장 낮은 화살에 넣는 것이 좋다.)
         {
             answer_case.push_back(i);
             answer_priority.push_back(alpa);
@@ -78,7 +78,7 @@ vector<int> solution(int n, vector<int> info) {
         int cur_appch = appch & (~answer_case[i]);
         int new_differ = calcul_level(answer_case[i], info, -1) - calcul_level(cur_appch, info, -1);
 
-        if (new_differ >= differ)
+        if (new_differ >= differ) //3.실현 가능한 경우의 수 중 룰에 따라 어피치를 이기는 경우의 수 중 우선 순위가 높은 경우의 수를 반환용으로 저장한다.
         {
             if ((new_differ == differ) && (answer_priority[i] <= target))
                 continue;
@@ -91,7 +91,7 @@ vector<int> solution(int n, vector<int> info) {
 
     calcul_level(lion, info, 1);
 
-    if (differ == 0)
+    if (differ == 0) //4.어떤 경우의 수에서도 이길 수 없을 시 [-1]을 반환한다.
         return { -1 };
     else
         return answer;
