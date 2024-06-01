@@ -1,0 +1,247 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TriggerEventArgs" Type="InArgument(ui:RepeatTriggerArgs)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>774.4,616</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Triggers</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="574.4,665.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:RepeatTrigger DisplayName="트리거 반복" Enabled="True" sap:VirtualizedContainerService.HintSize="512,144" sap2010:WorkflowViewState.IdRef="RepeatTrigger_2" Interval="00:00:10" SchedulingMode="Sequential" TriggerId="e8a4c921-424e-4645-b679-457920475d06" />
+    <Sequence DisplayName="inputToChat" sap:VirtualizedContainerService.HintSize="512,432.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome profrog - profrog의 개발 테스트 - CHZZK" sap:VirtualizedContainerService.HintSize="449.6,320.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V2" WindowResize="Maximize">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1113.6,1340" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="timeNow" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="1051.2,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[timeNow]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString()]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1051.2,1140" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                <TryCatch.Try>
+                  <Sequence sap:VirtualizedContainerService.HintSize="1014.4,885.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NCheckState DisplayName="Check App State '채팅'" sap:VirtualizedContainerService.HintSize="952,799.2" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,557.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Type Into '채팅을'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="WindowMessages" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Text="[&quot;만나서 반갑습니다. &quot; &amp; timeNow]" Timeout="2" Version="V3">
+                            <uix:NTypeInto.Target>
+                              <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" ContentHash="AzAHTUfNl0iU_rZCuQM1zA" CvElementArea="38, 931, 1866, 58" CvType="InputBox" DesignTimeRectangle="83, 950, 1775, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='PRE' type='' class='live_chatting_input_input__2F3Et' placeholder='채팅을 입력해주세요' aaname='' check:text='채팅' /&gt;" Guid="cd73c007-d2a7-4283-85b6-d672020d28f5" InformativeScreenshot="bc21bc627bd0cee23acb104358aab873.png" Reference="stkt7bgUQkWKn08BPUauwg/i_eNLRKd_0uyK-QT8-HRIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 일상 - CHZZK' /&gt;" SearchSteps="Selector, CV" Version="V3" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvTextArea="1860, 1007, 33, 18" CvTextArgument="AS" CvType="Text" DesignTimeRectangle="34, 1000, 1870, 40" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;aside&amp;gt;div&amp;gt;div' idx='4' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='live_chatting_input_tools__OPA1R' parentid='root' tag='DIV' aaname='' check:innerText='채팅' /&gt;" Guid="9199438d-292d-43be-9265-04d123076e56" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NTypeInto.Target>
+                          </uix:NTypeInto>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '채팅'" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="7d8c64b2-c6af-4b03-9ad9-1e75924cbbde" CvElementArea="1864, 1016, 45, 32" CvTextArea="1873, 1023, 27, 15" CvTextArgument="AHS!" CvType="Button" DesignTimeRectangle="1866, 1018, 42, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' type='button' class='live_chatting_input_send_button__8KBrn live_chatting_input_is_active__WeOjk' aaname='채팅' check:innerText='채팅' /&gt;" Guid="1268d99c-ba0d-429a-a9e0-a14274eb454d" InformativeScreenshot="1b87c7c9043dab6f1c140cddfc4477a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - profrog의 개발 테스트 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                            <uix:NClick.VerifyOptions>
+                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                <uix:VerifyExecutionOptions.Retry>
+                                  <InArgument x:TypeArguments="x:Boolean" />
+                                </uix:VerifyExecutionOptions.Retry>
+                                <uix:VerifyExecutionOptions.Timeout>
+                                  <InArgument x:TypeArguments="x:Double" />
+                                </uix:VerifyExecutionOptions.Timeout>
+                              </uix:VerifyExecutionOptions>
+                            </uix:NClick.VerifyOptions>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvElementArea="38, 931, 1866, 58" CvType="InputBox" DesignTimeRectangle="83, 950, 1775, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='PRE' type='' class='live_chatting_input_input__2F3Et' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="b72652a9-f00a-402b-909d-84ca1dd3653c" InformativeScreenshot="9bf3ee035c2c6fb2cf9caf8cd2bb53ed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 일상 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                              <uix:Target CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvTextArea="1860, 1007, 33, 18" CvTextArgument="AS" CvType="Text" DesignTimeRectangle="34, 1000, 1870, 40" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;aside&amp;gt;div&amp;gt;div' idx='4' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='live_chatting_input_tools__OPA1R' parentid='root' tag='DIV' aaname='' check:innerText='채팅' /&gt;" Guid="b15a1ad9-5674-4948-bce3-e28d1c710f41" SearchSteps="FuzzySelector, CV" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NCheckState.Target>
+                    </uix:NCheckState>
+                  </Sequence>
+                </TryCatch.Try>
+                <TryCatch.Catches>
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1017.6,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ActivityAction x:TypeArguments="s:Exception">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                      </ActivityAction.Argument>
+                    </ActivityAction>
+                  </Catch>
+                </TryCatch.Catches>
+              </TryCatch>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="7b46838283ef24468e50f7b8012b5872.jpg" Selector="&lt;html app='chrome.exe' title='profrog - profrog의 개발 테스트 - CHZZK' /&gt;" Title="profrog - profrog의 개발 테스트 - CHZZK" Url="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" />
+        </uix:NApplicationCard.TargetApp>
+      </uix:NApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
