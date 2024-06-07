@@ -1,0 +1,13 @@
+﻿{
+  "Name": "녹음기",
+  "Type": "Screen",
+  "Id": "ycmlHB6tk0-A2UMMnrJbOQ",
+  "Reference": "stkt7bgUQkWKn08BPUauwg/ycmlHB6tk0-A2UMMnrJbOQ",
+  "ParentRef": "stkt7bgUQkWKn08BPUauwg/iZ03AjB5TUKWLgZ6TDQkFA",
+  "Created": "2024-06-02T12:37:40.8165902Z",
+  "Updated": "2024-06-02T12:37:40.8165902Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

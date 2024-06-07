@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Click ''",
+  "Type": "Element",
+  "Id": "8GesHQLCtUehOWp62iGJrQ",
+  "Reference": "stkt7bgUQkWKn08BPUauwg/8GesHQLCtUehOWp62iGJrQ",
+  "ParentRef": "stkt7bgUQkWKn08BPUauwg/ycmlHB6tk0-A2UMMnrJbOQ",
+  "Created": "2024-06-02T12:37:41.0754962Z",
+  "Updated": "2024-06-02T12:37:41.0754962Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

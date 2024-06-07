@@ -1,0 +1,12 @@
+﻿{
+  "Name": "녹음기",
+  "Type": "App",
+  "Id": "_ClHcxm7VUuSb5hP9lRhYw",
+  "Reference": "stkt7bgUQkWKn08BPUauwg/_ClHcxm7VUuSb5hP9lRhYw",
+  "Created": "2024-06-02T12:37:40.7890454Z",
+  "Updated": "2024-06-02T12:37:40.7890454Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.4.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.4.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

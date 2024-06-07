@@ -4,7 +4,10 @@
   "description": "development for AutoChat",
   "main": "Main.xaml",
   "dependencies": {
+    "Google.Cloud.Speech.V2": "[1.1.0]",
+    "System.Speech": "[8.0.0]",
     "UiPath.Excel.Activities": "[2.23.3-preview]",
+    "UiPath.IntegrationService.Activities": "[1.5.0]",
     "UiPath.Mail.Activities": "[1.22.2]",
     "UiPath.System.Activities": "[24.3.1]",
     "UiPath.Testing.Activities": "[24.4.0-preview]",

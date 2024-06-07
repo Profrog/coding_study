@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="JHqw7h1f9Um4eSW5QlaE5Q" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="931, 121, 80, 60" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;uia automationid='RootPivot' cls='Pivot' /&gt;&lt;uia automationid='HistoryListView' cls='ListView' /&gt;&lt;uia cls='Button' idx='2' /&gt;" FuzzySelectorArgument="&lt;uia automationid='RootPivot' cls='Pivot' /&gt;&lt;uia automationid='HistoryListView' cls='ListView' /&gt;&lt;uia cls='Button' role='단추' automationid='' /&gt;" Guid="adff8649-7daa-4474-9265-5120707173bc" ScopeSelectorArgument="&lt;wnd app='applicationframehost.exe' appid='2568CaiJunhong.RecorderOnes_nnrr2ryxcqq94!App' title='녹음기' /&gt;" SearchSteps="FuzzySelector" Version="V3" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="47aa4761-2a0b-42d4-a6db-7f2d076bd9d9" CvTextArea="66, 8, 38, 16" CvTextArgument="4&amp;71" CvType="Text" DesignTimeRectangle="8, 1, 1022, 32" FullSelectorArgument="&lt;wnd cls='ApplicationFrameTitleBarWindow' idx='2' /&gt;" FuzzySelectorArgument="&lt;wnd cls='ApplicationFrameTitleBarWindow' /&gt;" Guid="47d0913b-da95-4cd6-a927-8b7eb7df522a" SearchSteps="Selector, FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="7f815207e69dc41050094c20af8b0047.png" xmlns="">0SxGRZrK7lECp7chCo2FcFA</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
