@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="C4cYVc2Ci0-thSlNKUY4mg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="0efHJUQTiEiCkh9-l-E7Dg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="e6a8ed66-10ad-4ba4-acfd-80deb0663cb4" CvElementArea="24, 965, 1889, 41" CvType="InputBox" DesignTimeRectangle="67, 966, 1804, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='live_chatting_input_input__2F3Et live_chatting_input_default__HjSyH' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="5197f33d-e958-4eaa-bf4f-b40b4926a752" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
-      <imageRef attrName="InformativeScreenshot" originalValue="0fc0cedb54a979b0ebcfe958b91907d6.png" xmlns="">0S9KP-ni4S0GfhZ666BSqiQ</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="1e252a21-436a-4346-9b01-4f5bf125edfc" CvElementArea="28, 498, 956, 45" CvType="InputBox" DesignTimeRectangle="67, 511, 879, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='PRE' type='' class='live_chatting_input_input__2F3Et' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="3c6880a8-da47-4018-a13b-c1f979fc31c4" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="1e252a21-436a-4346-9b01-4f5bf125edfc" CvElementArea="939, 550, 45, 32" CvTextArea="948, 558, 27, 14" CvTextArgument="AlS!" CvType="Button" DesignTimeRectangle="941, 553, 42, 28" ElementType="Button" FullSelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' type='button' class='live_chatting_input_send_button__8KBrn' aaname='채팅' check:innerText='채팅' /&gt;" Guid="4c057df2-91af-47c5-8baa-be3cd6f4680b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="a0479d8bf7ebb210eb37eb83078ecb62.png" xmlns="">0DxIQwLUc802ijWxz0BIUXw</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">None</x:String>
   </ObjectRepositoryTargetData.Data>
