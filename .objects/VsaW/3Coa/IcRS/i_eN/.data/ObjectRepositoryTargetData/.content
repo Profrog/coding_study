@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="AzAHTUfNl0iU_rZCuQM1zA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="C4cYVc2Ci0-thSlNKUY4mg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
-    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvElementArea="38, 931, 1866, 58" CvType="InputBox" DesignTimeRectangle="83, 950, 1775, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='PRE' type='' class='live_chatting_input_input__2F3Et' placeholder='채팅을 입력해주세요' aaname='' check:text='채팅' /&gt;" Guid="cd73c007-d2a7-4283-85b6-d672020d28f5" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 일상 - CHZZK' /&gt;" SearchSteps="Selector, CV" Version="V3" Visibility="Interactive">
-      <TargetAnchorable.Anchors>
-        <scg:List x:TypeArguments="ITarget" Capacity="4">
-          <Target CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvTextArea="1860, 1007, 33, 18" CvTextArgument="AS" CvType="Text" DesignTimeRectangle="34, 1000, 1870, 40" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;aside&amp;gt;div&amp;gt;div' idx='4' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='live_chatting_input_tools__OPA1R' parentid='root' tag='DIV' aaname='' check:innerText='채팅' /&gt;" Guid="9199438d-292d-43be-9265-04d123076e56" SearchSteps="FuzzySelector, CV" />
-        </scg:List>
-      </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="bc21bc627bd0cee23acb104358aab873.png" xmlns="">01-aibaOj4UeppRcoecAQ8w</imageRef>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="e6a8ed66-10ad-4ba4-acfd-80deb0663cb4" CvElementArea="24, 965, 1889, 41" CvType="InputBox" DesignTimeRectangle="67, 966, 1804, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='live_chatting_input_input__2F3Et live_chatting_input_default__HjSyH' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="5197f33d-e958-4eaa-bf4f-b40b4926a752" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="0fc0cedb54a979b0ebcfe958b91907d6.png" xmlns="">0S9KP-ni4S0GfhZ666BSqiQ</imageRef>
     </TargetAnchorable>
     <x:String x:Key="ActivityType">None</x:String>
   </ObjectRepositoryTargetData.Data>

@@ -6,15 +6,15 @@
   "OriginalIconFileName": null,
   "Arguments": [
     {
-      "Name": "TriggerEventArgs",
-      "DisplayName": "TriggerEventArgs",
+      "Name": "ConnectorActivity_3_Connection0",
+      "DisplayName": "ConnectorActivity_3_uipath-google-speechtotext",
       "Category": null,
-      "Tooltip": null,
+      "Tooltip": "Convert Short Speech to Text",
       "Placeholder": null,
-      "Widget": null,
-      "IsRequired": false,
+      "Widget": "Connection",
+      "IsRequired": true,
       "IsPrincipal": true,
-      "ArgumentType": 0,
+      "ArgumentType": 1,
       "DataSourceItems": null
     }
   ]

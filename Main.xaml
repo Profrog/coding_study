@@ -1,12 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <x:Members>
-    <x:Property Name="TriggerEventArgs" Type="InArgument(ui:RepeatTriggerArgs)" />
-  </x:Members>
-  <VisualBasic.Settings>
-    <x:Null />
-  </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1271.2,4542.4</sap:VirtualizedContainerService.HintSize>
-  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1287.2,6292.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:isactr="http://schemas.uipath.com/workflow/integration-service-activities/isactr" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -63,6 +55,9 @@
       <x:String>UiPath.CV.Activities</x:String>
       <x:String>UiPath.CV.Activities.Interfaces</x:String>
       <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Platform</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -130,12 +125,15 @@
       <AssemblyReference>UiPath.CV.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1281.6,4477.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="558.4,812.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="output_voice" />
       <Variable x:TypeArguments="ui:UiElement" Name="_out_NCheckState_3__OutUiElement" />
+      <Variable x:TypeArguments="x:String" Name="file_direct" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,518 +141,519 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1219.2,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="416,221.6" sap2010:WorkflowViewState.IdRef="Sequence_14">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:RepeatTrigger DisplayName="트리거 반복" Enabled="True" sap:VirtualizedContainerService.HintSize="353.6,135.2" sap2010:WorkflowViewState.IdRef="RepeatTrigger_2" Interval="00:00:10" SchedulingMode="Sequential" TriggerId="e8a4c921-424e-4645-b679-457920475d06" />
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <Sequence DisplayName="recordSpeech" sap:VirtualizedContainerService.HintSize="1219.2,3367.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
+    <Sequence DisplayName="assign_sequence" sap:VirtualizedContainerService.HintSize="496,452.8" sap2010:WorkflowViewState.IdRef="Sequence_121">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1156.8,365.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <TryCatch.Try>
-          <ui:Delete ContinueOnError="{x:Null}" ResourceFile="{x:Null}" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="Delete_2" Path="C:\Users\ache1\Music\Recordpad\voicefile000.mp3">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:Delete>
-        </TryCatch.Try>
-        <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[file_direct]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">C:\Users\ache1\Music\Recordpad\voicefile000.mp3</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[GlobalVariablesNamespace.GlobalVariables.record_time]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">00:00:10</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="433.6,104.8" sap2010:WorkflowViewState.IdRef="Assign_9">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[GlobalVariablesNamespace.GlobalVariables.repeat_count]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">100</InArgument>
+        </Assign.Value>
+      </Assign>
+    </Sequence>
+    <ui:RepeatNumberOfTimesX DisplayName="Repeat Number Of Times" sap:VirtualizedContainerService.HintSize="496,271.2" sap2010:WorkflowViewState.IdRef="RepeatNumberOfTimesX_1" NumberOfTimes="[GlobalVariablesNamespace.GlobalVariables.repeat_count]" StartAt="1">
+      <ui:RepeatNumberOfTimesX.Body>
+        <ActivityAction x:TypeArguments="x:Int32">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItem" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="416,80.8" sap2010:WorkflowViewState.IdRef="Sequence_120">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ActivityAction x:TypeArguments="s:Exception">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-              </ActivityAction.Argument>
-            </ActivityAction>
-          </Catch>
-        </TryCatch.Catches>
-      </TryCatch>
-      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application: 안녹음기" sap:VirtualizedContainerService.HintSize="1156.8,2849.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_29" OpenMode="IfNotOpen" ScopeGuid="fa04a387-3da4-4a3c-8360-66eefe0a563b" Version="V2">
-        <uix:NApplicationCard.Body>
-          <ActivityAction x:TypeArguments="x:Object">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1123.2,2518.4" sap2010:WorkflowViewState.IdRef="Sequence_31">
+            <Sequence DisplayName="voiceToChat" sap:VirtualizedContainerService.HintSize="1297.6,3445.6" sap2010:WorkflowViewState.IdRef="Sequence_84">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <uix:NCheckState DisplayName="Check App State ' 오늘녹음'" sap:VirtualizedContainerService.HintSize="1060.8,2404.8" sap2010:WorkflowViewState.IdRef="NCheckState_3" OutUiElement="[_out_NCheckState_3__OutUiElement]" ScopeIdentifier="fa04a387-3da4-4a3c-8360-66eefe0a563b" Version="V3">
-                <uix:NCheckState.IfExists>
-                  <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="558.4,2186.4" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Sequence DisplayName="checkName" sap:VirtualizedContainerService.HintSize="496,1534.4" sap2010:WorkflowViewState.IdRef="Sequence_57">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="x:Boolean" Name="inital0" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  옵션'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="995a9196-1a5d-42ad-9c79-6fa35e19ac8b" InformativeScreenshot="dad8d5242c1b4e0d22cb4820da7d6387" Selector="&lt;wnd ctrlid='89' /&gt;&lt;ctrl name='옵션' role='push button' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab  출력'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d23421ba-d9ed-4bac-adfc-0edb48b43cc4" InformativeScreenshot="1fd04c422f29e8659a08323f5217476d" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd ctrlid='12320' /&gt;&lt;ctrl name='출력' role='page tab' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22fa8673-a204-4b97-ba53-5b68d264e7f6" InformativeScreenshot="22647188b92f5d54fe9994adabbacc59" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd cls='#32770' title='출력' /&gt;&lt;wnd ctrlid='146' title='자동 번호를 0으로 재설정' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <Assign sap:VirtualizedContainerService.HintSize="433.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">[inital0]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <ui:UiElementExists DisplayName="Element Exists 'dialog  재설정'" Exists="[inital0]" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
-                        <ui:UiElementExists.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5e52299-9f32-4a8e-a535-3c238551ea41" InformativeScreenshot="98c3a5d4764968dfce686b84f8ae6505" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='재설정' /&gt;&lt;ctrl name='재설정' role='dialog' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:UiElementExists.Target>
-                      </ui:UiElementExists>
-                      <If Condition="[inital0 = True]" sap:VirtualizedContainerService.HintSize="433.6,560.8" sap2010:WorkflowViewState.IdRef="If_3">
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="377.6,377.6" sap2010:WorkflowViewState.IdRef="Sequence_70">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Delay_9" />
-                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'dialog  재설정'" sap:VirtualizedContainerService.HintSize="334.4,157.6" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
-                              <ui:SendHotkey.Target>
-                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e61e7a08-66cd-4e7a-90c2-4e256867cc46" InformativeScreenshot="98c3a5d4764968dfce686b84f8ae6505" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='재설정' /&gt;&lt;ctrl name='재설정' role='dialog' /&gt;">
-                                  <ui:Target.TimeoutMS>
-                                    <InArgument x:TypeArguments="x:Int32" />
-                                  </ui:Target.TimeoutMS>
-                                  <ui:Target.WaitForReady>
-                                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                                  </ui:Target.WaitForReady>
-                                </ui:Target>
-                              </ui:SendHotkey.Target>
-                            </ui:SendHotkey>
-                          </Sequence>
-                        </If.Then>
-                        <If.Else>
-                          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_71" />
-                        </If.Else>
-                      </If>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ed9a773-65e6-406a-95b2-a8f58439e503" InformativeScreenshot="ff822c8c8b8dbe9a024256155389f707" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd ctrlid='1' title='확인' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </Sequence>
-                    <Sequence DisplayName="recordProcess" sap:VirtualizedContainerService.HintSize="496,498.4" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af75ff88-78a0-46f2-bd16-0adafcc39795" InformativeScreenshot="f568dbc0d56344b38880e23336759cbd" Selector="&lt;wnd ctrlid='1137' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                      <Delay Duration="00:00:10" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Delay_7" />
-                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="387.2,107.2" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition Position="Center">
-                            <ui:CursorPosition.OffsetX>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetX>
-                            <ui:CursorPosition.OffsetY>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:CursorPosition.OffsetY>
-                          </ui:CursorPosition>
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9bf1cf1e-beba-4567-9068-f68ca73cf565" InformativeScreenshot="c68954c151ef0ab9a648f9e357cbc3c5" Selector="&lt;wnd ctrlid='1141' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </Sequence>
-                  </Sequence>
-                </uix:NCheckState.IfExists>
-                <uix:NCheckState.IfNotExists>
-                  <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                  </Sequence>
-                </uix:NCheckState.IfNotExists>
-                <uix:NCheckState.Target>
-                  <uix:TargetAnchorable DesignTimeRectangle="0, 0, 560, 640" DesignTimeScaleFactor="1.25" Guid="7782b75d-cd2f-4dc7-a686-487ac1624c01" InformativeScreenshot="669df2d3de6475573ae99aaa248ea19e.png" ScopeSelectorArgument="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad NCH 소프트웨어에' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
-                    <uix:TargetAnchorable.FuzzySelectorArgument>
-                      <InArgument x:TypeArguments="x:String">
-                        <Literal x:TypeArguments="x:String" Value="" />
-                      </InArgument>
-                    </uix:TargetAnchorable.FuzzySelectorArgument>
-                  </uix:TargetAnchorable>
-                </uix:NCheckState.Target>
+              <Sequence DisplayName="recordSpeech" sap:VirtualizedContainerService.HintSize="1235.2,3228.8" sap2010:WorkflowViewState.IdRef="Sequence_83">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-              </uix:NCheckState>
-            </Sequence>
-          </ActivityAction>
-        </uix:NApplicationCard.Body>
-        <uix:NApplicationCard.TargetApp>
-          <uix:TargetApp Area="392, 316, 560, 640" FilePath="C:\Program Files (x86)\NCH Software\Recordpad\recordpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQVSURBVFhHzZYtkOM4EIUDAwMNDQ0NBQ0FDQUFBQ0NDQ0DAwMNAw0DAwMNDQcuPNb3XkvOZhzPXmrrbudS9UqJfrq/brWk7P4XH/mmT3IfAUJopGlaCU1s/0v5ELYB/pS83wBgpw6Cbr1gEcc4b5n77thazvltgH8SF7dtJ31/hHrpuk7Vd732dWg1xRtrn7UJwE6XBrVdvkNc1CTHbQMQa8SbTFyxh3biyoP4qpDgbILqH5F+spdU1+4VoE6Tl3YRnTNqOnYmF5fvpK9yOXsjY1urhlDJsc4klIABUKgjSEA2tmxauwUAqrU4mZEHVz8c346tzOMgP+7jJ7FvGjrAlBIw1yFDLU4UM7G2W9n6FYBUz+JELvaIhs4HX8l8GeTjdlUpxPW0qVvvpEU26hJZQXEy7c+2q8q+ApBKB9FSzqFgHLKAlDLd0+WkAPM0ycfHh0IIIAQOVWMPdTIPverW1REC28ZttCly+jBmA6AojJSm0sEIgL1DBL3Zy+3URMNPAEz7FoBcWpGhkQlrRp9LYJHaCnUQxCBy2s/y8hWAnYtKTLKV0cUXX6gxGWD4Qidwumjt/AHgZT57ubVGjiaeEougirJS+4eseAXIc6PiBE60BaPfydiUMp9wbmFUjRNCQVKrYn/SgFvujCo/1XLvjJwtTgW2ojJG7dLHlwBLBrgdpObia8BkGJMTjNL4J2eLmCEK4wTV+VbmtpABNjoEUiGgHHapbQAOpiwUeSG+3CvAzR8EeVSDGtnD0VopS8k518xNJmON45u2Qe3/EiBJAVj9FgXo9iJdniBgnBBrMTva/nQufSFzwBYCQLcBxfw+QFGmDOzl6nbyIySIUxUdqKO12I9xdY4qbw8ye9wfAOA2NAYZSPbfAEAN4CYj+Vjv1RANMqqYCYI8SfsIgCzQeZfJX81OJgIkGx73wWI7yzaOYVFUqjgJp8AUckQGGAEN0eADgk4WLREvEPyOeR9MP7J3hfML3gmegsU2C/1LgAjBC6mS1sYscBtoUNoEwe1QkJXYD7H47u6gztl2daFHUO2nu+AVgBNW8rZEFg6axhuyQIiYCdZE9nAYhd/cdzifPKofjidEztvQVjGoxe7bALw22zpCxCO508omRARJMGj5m4B3OJ8QMXXDLdo42rKf7PI0bABw0qt4hR7xGJ3qCMFjRRDWBWGoiWIf6wWwjJzOe7ygvNbXNlkLbwNQNSDOjZURtyJTSwgFSZoANqFgVcjAtTHShfjqcX35ZIvfNwFI+pW40FS1Gh1bq4/MHTB0FpXrb/afmlqf8dLw8dm2x3rYAKh/KY0ALd/z4J30jYczpzpCXeDfLUQN0J+Ot239FsC/KR7H3wYwb2hr3SKOM0MvAJriP6Qs38jAd3yS++/87HZ/AxxKZHoIH3ONAAAAAElFTkSuQmCC" InformativeScreenshot="e66b02f6409d6ba664f5b210b25db67c.png" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad NCH 소프트웨어에' /&gt;" Title="녹음기" />
-        </uix:NApplicationCard.TargetApp>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </uix:NApplicationCard>
-    </Sequence>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1219.2,772.8" sap2010:WorkflowViewState.IdRef="CommentOut_13">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="512,694.4" sap2010:WorkflowViewState.IdRef="Sequence_45">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="speechToText" sap:VirtualizedContainerService.HintSize="449.6,582.4" sap2010:WorkflowViewState.IdRef="Sequence_43">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <isactr:ConnectorActivity Configuration="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" ConnectionId="38372882-91c7-493f-bfa0-b089fa07e924" DisplayName="Convert Short Speech to Text" sap:VirtualizedContainerService.HintSize="387.2,340" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="4a152120-9ce7-3d86-91b1-11360b38b4bc">
-              <isactr:ConnectorActivity.FieldObjects>
-                <isactr:FieldObject Name="_file" Type="FieldArgument">
-                  <isactr:FieldObject.Value>
-                    <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath("C:\\Users\\ache1\\OneDrive\\Documents\\소리 녹음\\voicefile.m4a")]</InArgument>
-                  </isactr:FieldObject.Value>
-                </isactr:FieldObject>
-                <isactr:FieldObject Name="config_sub_languageCode" Type="FieldArgument">
-                  <isactr:FieldObject.Value>
-                    <InArgument x:TypeArguments="x:String">ko-KR</InArgument>
-                  </isactr:FieldObject.Value>
-                </isactr:FieldObject>
-                <isactr:FieldObject Name="config_sub_encoding" Type="FieldArgument">
-                  <isactr:FieldObject.Value>
-                    <InArgument x:TypeArguments="x:String">FLAC</InArgument>
-                  </isactr:FieldObject.Value>
-                </isactr:FieldObject>
-                <isactr:FieldObject Name="out_transcript" Type="FieldArgument">
-                  <isactr:FieldObject.Value>
-                    <OutArgument x:TypeArguments="x:String">[output_voice]</OutArgument>
-                  </isactr:FieldObject.Value>
-                </isactr:FieldObject>
-                <isactr:FieldObject Name="config_sub_sampleRateHertz" Type="FieldArgument">
-                  <isactr:FieldObject.Value>
-                    <InArgument x:TypeArguments="x:Int64">16000</InArgument>
-                  </isactr:FieldObject.Value>
-                </isactr:FieldObject>
-                <isactr:FieldObject Name="config_sub_enableWordTimeOffsets" Type="FieldArgument" />
-              </isactr:ConnectorActivity.FieldObjects>
-            </isactr:ConnectorActivity>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[output_voice]" />
-          </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1172.8,52.8" sap2010:WorkflowViewState.IdRef="CommentOut_5">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="1272,1787.2" sap2010:WorkflowViewState.IdRef="Sequence_26">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="inputToChat" sap:VirtualizedContainerService.HintSize="1209.6,1700.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome profrog - profrog의 개발 테스트 - CHZZK" sap:VirtualizedContainerService.HintSize="1147.2,1588.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V2" WindowResize="Maximize">
-              <uix:NApplicationCard.Body>
-                <ActivityAction x:TypeArguments="x:Object">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1113.6,1348.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                    <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="timeNow" />
-                    </Sequence.Variables>
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="1051.2,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[timeNow]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString()]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1051.2,1146.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                      <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="1014.4,890.4" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1172.8,397.6" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch.Try>
+                    <ui:Delete ContinueOnError="{x:Null}" ResourceFile="{x:Null}" sap:VirtualizedContainerService.HintSize="334.4,134.4" sap2010:WorkflowViewState.IdRef="Delete_2" Path="[file_direct]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:Delete>
+                  </TryCatch.Try>
+                  <TryCatch.Catches>
+                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ActivityAction x:TypeArguments="s:Exception">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                        </ActivityAction.Argument>
+                      </ActivityAction>
+                    </Catch>
+                  </TryCatch.Catches>
+                </TryCatch>
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application: 안녹음기" sap:VirtualizedContainerService.HintSize="1172.8,2710.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_29" OpenMode="IfNotOpen" ScopeGuid="fa04a387-3da4-4a3c-8360-66eefe0a563b" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1139.2,2396" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckState DisplayName="Check App State ' 오늘녹음'" sap:VirtualizedContainerService.HintSize="1076.8,2308" sap2010:WorkflowViewState.IdRef="NCheckState_3" OutUiElement="[_out_NCheckState_3__OutUiElement]" ScopeIdentifier="fa04a387-3da4-4a3c-8360-66eefe0a563b" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="574.4,2064.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Sequence DisplayName="checkName" sap:VirtualizedContainerService.HintSize="512,1465.6" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="x:Boolean" Name="inital0" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'push button  옵션'" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="995a9196-1a5d-42ad-9c79-6fa35e19ac8b" InformativeScreenshot="dad8d5242c1b4e0d22cb4820da7d6387" Selector="&lt;wnd ctrlid='89' /&gt;&lt;ctrl name='옵션' role='push button' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'page tab  출력'" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="d23421ba-d9ed-4bac-adfc-0edb48b43cc4" InformativeScreenshot="1fd04c422f29e8659a08323f5217476d" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd ctrlid='12320' /&gt;&lt;ctrl name='출력' role='page tab' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="22fa8673-a204-4b97-ba53-5b68d264e7f6" InformativeScreenshot="22647188b92f5d54fe9994adabbacc59" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd cls='#32770' title='출력' /&gt;&lt;wnd ctrlid='146' title='자동 번호를 0으로 재설정' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Assign sap:VirtualizedContainerService.HintSize="449.6,114.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[inital0]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:UiElementExists DisplayName="Element Exists 'dialog  재설정'" Exists="[inital0]" sap:VirtualizedContainerService.HintSize="449.6,139.2" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                                  <ui:UiElementExists.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f5e52299-9f32-4a8e-a535-3c238551ea41" InformativeScreenshot="98c3a5d4764968dfce686b84f8ae6505" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='재설정' /&gt;&lt;ctrl name='재설정' role='dialog' /&gt;" TimeoutMS="2000">
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:UiElementExists.Target>
+                                </ui:UiElementExists>
+                                <If Condition="[inital0 = True]" sap:VirtualizedContainerService.HintSize="449.6,540" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If.Then>
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,267.2" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'dialog  재설정'" sap:VirtualizedContainerService.HintSize="353.6,180.8" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                        <ui:SendHotkey.Target>
+                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e61e7a08-66cd-4e7a-90c2-4e256867cc46" InformativeScreenshot="98c3a5d4764968dfce686b84f8ae6505" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='재설정' /&gt;&lt;ctrl name='재설정' role='dialog' /&gt;">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                            <ui:Target.WaitForReady>
+                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                            </ui:Target.WaitForReady>
+                                          </ui:Target>
+                                        </ui:SendHotkey.Target>
+                                      </ui:SendHotkey>
+                                    </Sequence>
+                                  </If.Then>
+                                  <If.Else>
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,102.4" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </Sequence>
+                                  </If.Else>
+                                </If>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" ContinueOnError="True" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="449.6,132" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7ed9a773-65e6-406a-95b2-a8f58439e503" InformativeScreenshot="ff822c8c8b8dbe9a024256155389f707" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad 옵션' /&gt;&lt;wnd ctrlid='1' title='확인' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                              <Sequence DisplayName="recordProcess" sap:VirtualizedContainerService.HintSize="512,508.8" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="387.2,139.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="af75ff88-78a0-46f2-bd16-0adafcc39795" InformativeScreenshot="f568dbc0d56344b38880e23336759cbd" Selector="&lt;wnd ctrlid='1137' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                                <Delay Duration="[TimeSpan.parse(record_time)]" sap:VirtualizedContainerService.HintSize="387.2,122.4" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                                <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="387.2,132" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                  <ui:Click.CursorPosition>
+                                    <ui:CursorPosition Position="Center">
+                                      <ui:CursorPosition.OffsetX>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetX>
+                                      <ui:CursorPosition.OffsetY>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:CursorPosition.OffsetY>
+                                    </ui:CursorPosition>
+                                  </ui:Click.CursorPosition>
+                                  <ui:Click.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9bf1cf1e-beba-4567-9068-f68ca73cf565" InformativeScreenshot="c68954c151ef0ab9a648f9e357cbc3c5" Selector="&lt;wnd ctrlid='1141' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:Click.Target>
+                                </ui:Click>
+                              </Sequence>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,24.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="0, 0, 560, 640" DesignTimeScaleFactor="1.25" Guid="7782b75d-cd2f-4dc7-a686-487ac1624c01" InformativeScreenshot="669df2d3de6475573ae99aaa248ea19e.png" ScopeSelectorArgument="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad NCH 소프트웨어에' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable.FuzzySelectorArgument>
+                                <InArgument x:TypeArguments="x:String">
+                                  <Literal x:TypeArguments="x:String" Value="" />
+                                </InArgument>
+                              </uix:TargetAnchorable.FuzzySelectorArgument>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckState.Target>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckState DisplayName="Check App State '채팅'" sap:VirtualizedContainerService.HintSize="952,802.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
-                            <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,559.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Type Into '채팅을'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="WindowMessages" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Text="[output_voice &amp; timeNow]" Timeout="2" Version="V3">
-                                  <uix:NTypeInto.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" ContentHash="AzAHTUfNl0iU_rZCuQM1zA" CvElementArea="38, 931, 1866, 58" CvType="InputBox" DesignTimeRectangle="83, 950, 1775, 25" DesignTimeScaleFactor="1.25" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='PRE' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='PRE' type='' class='live_chatting_input_input__2F3Et' placeholder='채팅을 입력해주세요' aaname='' check:text='채팅' /&gt;" Guid="cd73c007-d2a7-4283-85b6-d672020d28f5" InformativeScreenshot="bc21bc627bd0cee23acb104358aab873.png" Reference="stkt7bgUQkWKn08BPUauwg/i_eNLRKd_0uyK-QT8-HRIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 일상 - CHZZK' /&gt;" SearchSteps="Selector, CV" Version="V3" Visibility="Interactive">
-                                      <uix:TargetAnchorable.Anchors>
-                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                          <uix:Target CVScreenId="441ddfcd-b0c3-43c4-92cb-df2a385f1f93" CvTextArea="1860, 1007, 33, 18" CvTextArgument="AS" CvType="Text" DesignTimeRectangle="34, 1000, 1870, 40" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;aside&amp;gt;div&amp;gt;div' idx='4' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='live_chatting_input_tools__OPA1R' parentid='root' tag='DIV' aaname='' check:innerText='채팅' /&gt;" Guid="9199438d-292d-43be-9265-04d123076e56" SearchSteps="FuzzySelector, CV" />
-                                        </scg:List>
-                                      </uix:TargetAnchorable.Anchors>
-                                    </uix:TargetAnchorable>
-                                  </uix:NTypeInto.Target>
-                                </uix:NTypeInto>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '채팅'" sap:VirtualizedContainerService.HintSize="387.2,218.4" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
-                                  <uix:NClick.Target>
-                                    <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="7d8c64b2-c6af-4b03-9ad9-1e75924cbbde" CvElementArea="1864, 1016, 45, 32" CvTextArea="1873, 1023, 27, 15" CvTextArgument="AHS!" CvType="Button" DesignTimeRectangle="1866, 1018, 42, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' type='button' class='live_chatting_input_send_button__8KBrn live_chatting_input_is_active__WeOjk' aaname='채팅' check:innerText='채팅' /&gt;" Guid="1268d99c-ba0d-429a-a9e0-a14274eb454d" InformativeScreenshot="1b87c7c9043dab6f1c140cddfc4477a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - profrog의 개발 테스트 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
-                                  </uix:NClick.Target>
-                                  <uix:NClick.VerifyOptions>
-                                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                                      <uix:VerifyExecutionOptions.Retry>
-                                        <InArgument x:TypeArguments="x:Boolean" />
-                                      </uix:VerifyExecutionOptions.Retry>
-                                      <uix:VerifyExecutionOptions.Timeout>
-                                        <InArgument x:TypeArguments="x:Double" />
-                                      </uix:VerifyExecutionOptions.Timeout>
-                                    </uix:VerifyExecutionOptions>
-                                  </uix:NClick.VerifyOptions>
-                                </uix:NClick>
-                              </Sequence>
-                            </uix:NCheckState.IfExists>
-                            <uix:NCheckState.IfNotExists>
-                              <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </Sequence>
-                            </uix:NCheckState.IfNotExists>
-                            <uix:NCheckState.Target>
-                              <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="d965b884-83c9-47b2-84fe-8f3513c2ac1e" CvElementArea="27, 965, 1886, 40" CvType="InputBox" DesignTimeRectangle="67, 966, 1804, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='live_chatting_input_input__2F3Et live_chatting_input_default__HjSyH' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="c354f0d4-b691-48ca-b863-e087833eb428" InformativeScreenshot="65eb87f67a834b4fad3d494d6663a8fd.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 놀이터 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CVScreenId="d965b884-83c9-47b2-84fe-8f3513c2ac1e" CvTextArea="1873, 1023, 27, 15" CvTextArgument="AS" CvType="Text" DesignTimeRectangle="28, 1016, 1880, 32" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;section&amp;gt;aside&amp;gt;div&amp;gt;div' idx='4' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='live_chatting_input_tools__OPA1R' parentid='root' tag='DIV' aaname='' check:innerText='채팅' /&gt;" Guid="a4c6264e-82f5-4d64-8155-a618a2651b85" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NCheckState.Target>
-                          </uix:NCheckState>
-                        </Sequence>
-                      </TryCatch.Try>
-                      <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1017.6,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ActivityAction x:TypeArguments="s:Exception">
-                            <ActivityAction.Argument>
-                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                            </ActivityAction.Argument>
-                          </ActivityAction>
-                        </Catch>
-                      </TryCatch.Catches>
-                    </TryCatch>
-                  </Sequence>
-                </ActivityAction>
-              </uix:NApplicationCard.Body>
-              <uix:NApplicationCard.TargetApp>
-                <uix:TargetApp Area="-9, -9, 1938, 1060" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="84bb4f522b1942074b9ae48c37d5bea9.jpg" Selector="&lt;html app='chrome.exe' title='profrog - 개발자 pf의 일상 - CHZZK' /&gt;" Title="profrog - profrog의 개발 테스트 - CHZZK" Url="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" />
-              </uix:NApplicationCard.TargetApp>
-            </uix:NApplicationCard>
+                        </uix:NCheckState>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="392, 316, 560, 640" FilePath="C:\Program Files (x86)\NCH Software\Recordpad\recordpad.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAQVSURBVFhHzZYtkOM4EIUDAwMNDQ0NBQ0FDQUFBQ0NDQ0DAwMNAw0DAwMNDQcuPNb3XkvOZhzPXmrrbudS9UqJfrq/brWk7P4XH/mmT3IfAUJopGlaCU1s/0v5ELYB/pS83wBgpw6Cbr1gEcc4b5n77thazvltgH8SF7dtJ31/hHrpuk7Vd732dWg1xRtrn7UJwE6XBrVdvkNc1CTHbQMQa8SbTFyxh3biyoP4qpDgbILqH5F+spdU1+4VoE6Tl3YRnTNqOnYmF5fvpK9yOXsjY1urhlDJsc4klIABUKgjSEA2tmxauwUAqrU4mZEHVz8c346tzOMgP+7jJ7FvGjrAlBIw1yFDLU4UM7G2W9n6FYBUz+JELvaIhs4HX8l8GeTjdlUpxPW0qVvvpEU26hJZQXEy7c+2q8q+ApBKB9FSzqFgHLKAlDLd0+WkAPM0ycfHh0IIIAQOVWMPdTIPverW1REC28ZttCly+jBmA6AojJSm0sEIgL1DBL3Zy+3URMNPAEz7FoBcWpGhkQlrRp9LYJHaCnUQxCBy2s/y8hWAnYtKTLKV0cUXX6gxGWD4Qidwumjt/AHgZT57ubVGjiaeEougirJS+4eseAXIc6PiBE60BaPfydiUMp9wbmFUjRNCQVKrYn/SgFvujCo/1XLvjJwtTgW2ojJG7dLHlwBLBrgdpObia8BkGJMTjNL4J2eLmCEK4wTV+VbmtpABNjoEUiGgHHapbQAOpiwUeSG+3CvAzR8EeVSDGtnD0VopS8k518xNJmON45u2Qe3/EiBJAVj9FgXo9iJdniBgnBBrMTva/nQufSFzwBYCQLcBxfw+QFGmDOzl6nbyIySIUxUdqKO12I9xdY4qbw8ye9wfAOA2NAYZSPbfAEAN4CYj+Vjv1RANMqqYCYI8SfsIgCzQeZfJX81OJgIkGx73wWI7yzaOYVFUqjgJp8AUckQGGAEN0eADgk4WLREvEPyOeR9MP7J3hfML3gmegsU2C/1LgAjBC6mS1sYscBtoUNoEwe1QkJXYD7H47u6gztl2daFHUO2nu+AVgBNW8rZEFg6axhuyQIiYCdZE9nAYhd/cdzifPKofjidEztvQVjGoxe7bALw22zpCxCO508omRARJMGj5m4B3OJ8QMXXDLdo42rKf7PI0bABw0qt4hR7xGJ3qCMFjRRDWBWGoiWIf6wWwjJzOe7ygvNbXNlkLbwNQNSDOjZURtyJTSwgFSZoANqFgVcjAtTHShfjqcX35ZIvfNwFI+pW40FS1Gh1bq4/MHTB0FpXrb/afmlqf8dLw8dm2x3rYAKh/KY0ALd/z4J30jYczpzpCXeDfLUQN0J+Ot239FsC/KR7H3wYwb2hr3SKOM0MvAJriP6Qs38jAd3yS++/87HZ/AxxKZHoIH3ONAAAAAElFTkSuQmCC" InformativeScreenshot="e66b02f6409d6ba664f5b210b25db67c.png" Selector="&lt;wnd app='recordpad.exe' cls='#32770' title='RecordPad NCH 소프트웨어에' /&gt;" Title="녹음기" />
+                  </uix:NApplicationCard.TargetApp>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NApplicationCard>
+              </Sequence>
+              <Sequence DisplayName="speechToText" sap:VirtualizedContainerService.HintSize="1235.2,56.8" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <isactr:ConnectorActivity Configuration="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" ConnectionId="38372882-91c7-493f-bfa0-b089fa07e924" DisplayName="Convert Short Speech to Text" sap:VirtualizedContainerService.HintSize="387.2,372" sap2010:WorkflowViewState.IdRef="ConnectorActivity_3" UiPathActivityTypeId="4a152120-9ce7-3d86-91b1-11360b38b4bc">
+                  <isactr:ConnectorActivity.FieldObjects>
+                    <isactr:FieldObject Name="_file" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="upr:IResource">[LocalResource.FromPath(file_direct)]</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="config_sub_languageCode" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">ko-KR</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="config_sub_encoding" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:String">MP3</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="out_transcript" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <OutArgument x:TypeArguments="x:String">[output_voice]</OutArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="config_sub_sampleRateHertz" Type="FieldArgument">
+                      <isactr:FieldObject.Value>
+                        <InArgument x:TypeArguments="x:Int64">16000</InArgument>
+                      </isactr:FieldObject.Value>
+                    </isactr:FieldObject>
+                    <isactr:FieldObject Name="config_sub_enableWordTimeOffsets" Type="FieldArgument" />
+                  </isactr:ConnectorActivity.FieldObjects>
+                </isactr:ConnectorActivity>
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="387.2,113.6" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[output_voice]" />
+              </Sequence>
+              <Sequence DisplayName="inputToChat" sap:VirtualizedContainerService.HintSize="1235.2,48" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome profrog - profrog의 개발 테스트 - CHZZK" sap:VirtualizedContainerService.HintSize="1147.2,1711.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_8" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V2" WindowResize="Maximize">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="1113.6,1471.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="timeNow" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="1051.2,114.4" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[timeNow]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[System.DateTime.Now.ToString()]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1051.2,1268.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <Sequence sap:VirtualizedContainerService.HintSize="1014.4,1012.8" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NCheckState DisplayName="Check App State '채팅'" sap:VirtualizedContainerService.HintSize="952,924.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
+                                <uix:NCheckState.IfExists>
+                                  <Sequence DisplayName="타겟이 나타남" sap:VirtualizedContainerService.HintSize="449.6,681.6" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DelayBetweenKeys="0.1" DisplayName="Type Into '채팅을'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="387.2,250.4" sap2010:WorkflowViewState.IdRef="NTypeInto_5" InteractionMode="WindowMessages" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Text="[output_voice]" Timeout="2" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="e6a8ed66-10ad-4ba4-acfd-80deb0663cb4" ContentHash="C4cYVc2Ci0-thSlNKUY4mg" CvElementArea="24, 965, 1889, 41" CvType="InputBox" DesignTimeRectangle="67, 966, 1804, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='live_chatting_input_input__2F3Et live_chatting_input_default__HjSyH' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="5197f33d-e958-4eaa-bf4f-b40b4926a752" InformativeScreenshot="0fc0cedb54a979b0ebcfe958b91907d6.png" Reference="stkt7bgUQkWKn08BPUauwg/i_eNLRKd_0uyK-QT8-HRIw" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                      </uix:NTypeInto.Target>
+                                    </uix:NTypeInto>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click '채팅'" sap:VirtualizedContainerService.HintSize="387.2,225.6" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d5b034f3-aefc-4b98-a2b4-6a130689c823" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="7d8c64b2-c6af-4b03-9ad9-1e75924cbbde" CvElementArea="1864, 1016, 45, 32" CvTextArea="1873, 1023, 27, 15" CvTextArgument="AHS!" CvType="Button" DesignTimeRectangle="1866, 1018, 42, 28" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='send_chat_or_donate' tag='BUTTON' type='button' class='live_chatting_input_send_button__8KBrn live_chatting_input_is_active__WeOjk' aaname='채팅' check:innerText='채팅' /&gt;" Guid="1268d99c-ba0d-429a-a9e0-a14274eb454d" InformativeScreenshot="1b87c7c9043dab6f1c140cddfc4477a0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - profrog의 개발 테스트 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                      <uix:NClick.VerifyOptions>
+                                        <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                          <uix:VerifyExecutionOptions.Retry>
+                                            <InArgument x:TypeArguments="x:Boolean" />
+                                          </uix:VerifyExecutionOptions.Retry>
+                                          <uix:VerifyExecutionOptions.Timeout>
+                                            <InArgument x:TypeArguments="x:Double" />
+                                          </uix:VerifyExecutionOptions.Timeout>
+                                        </uix:VerifyExecutionOptions>
+                                      </uix:NClick.VerifyOptions>
+                                    </uix:NClick>
+                                    <Delay Duration="00:00:01" sap:VirtualizedContainerService.HintSize="387.2,115.2" sap2010:WorkflowViewState.IdRef="Delay_11" />
+                                  </Sequence>
+                                </uix:NCheckState.IfExists>
+                                <uix:NCheckState.IfNotExists>
+                                  <Sequence DisplayName="타겟이 나타나지 않음" sap:VirtualizedContainerService.HintSize="449.6,106.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </uix:NCheckState.IfNotExists>
+                                <uix:NCheckState.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" CVScreenId="e6a8ed66-10ad-4ba4-acfd-80deb0663cb4" CvElementArea="24, 965, 1889, 41" CvType="InputBox" DesignTimeRectangle="67, 966, 1804, 40" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl tag='TEXTAREA' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TEXTAREA' type='' class='live_chatting_input_input__2F3Et live_chatting_input_default__HjSyH' placeholder='채팅을 입력해주세요' aaname='' /&gt;" Guid="1019a823-dc7e-4d45-80f4-f6fb842c04c8" InformativeScreenshot="0e0a8d483879224f86e9371e30349639.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive" />
+                                </uix:NCheckState.Target>
+                              </uix:NCheckState>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1017.6,23.2" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="-1928, -8, 1936, 1066" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="d5c870ab36f3dcac8da8632dac6b52bc.jpg" Selector="&lt;html app='chrome.exe' title='profrog - RPA&amp;amp;치지직 채팅자동화 - CHZZK' /&gt;" Title="profrog - profrog의 개발 테스트 - CHZZK" Url="https://chzzk.naver.com/live/c572fbd2b63242a13bf704d8b335a827/chat" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+              </Sequence>
+            </Sequence>
           </Sequence>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
+        </ActivityAction>
+      </ui:RepeatNumberOfTimesX.Body>
+    </ui:RepeatNumberOfTimesX>
   </Sequence>
 </Activity>
