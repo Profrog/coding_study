@@ -1,5 +1,7 @@
 ## rpa & 치지직 채팅 자동화
 
+https://youtu.be/DIgNvaxSstk
+
  
 ### 프로젝트 다운로드 
     git clone https://github.com/Profrog/coding_study.git -b rpa 
