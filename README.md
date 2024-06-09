@@ -1,6 +1,6 @@
 ## rpa & 치지직 채팅 자동화
 
-https://youtu.be/DIgNvaxSstk
+시연 영상 : https://youtu.be/DIgNvaxSstk
 
  
 ### 프로젝트 다운로드 
