@@ -1,5 +1,10 @@
 # coding_study
 
+![Screenshot from 2024-09-02 10-20-13](https://github.com/user-attachments/assets/0158fecd-d2c2-44d0-a6bc-01af794f34fb)
+https://open.kakao.com/o/g9rKiCzf 
+다음 방에서 같이 할 수 있습니다. 
+
+
 <주차 참여> <br>
 제출 방법1 <br>
  문제풀이 사이트 통과 코드를 coding study 레파지토리에 업로드
