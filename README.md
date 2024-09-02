@@ -1,8 +1,8 @@
 # coding_study
 
-![Screenshot from 2024-09-02 10-20-13](https://github.com/user-attachments/assets/0158fecd-d2c2-44d0-a6bc-01af794f34fb)
-https://open.kakao.com/o/g9rKiCzf 
-다음 방에서 같이 할 수 있습니다. 
+
+![Screenshot from 2024-09-02 10-23-30](https://github.com/user-attachments/assets/962cee86-de10-48ac-9f2a-d22bb9091444)
+오픈 채팅방 : https://open.kakao.com/o/g9rKiCzf   
 
 
 <주차 참여> <br>
