@@ -2,6 +2,7 @@
 
 
 ![Screenshot from 2024-09-02 10-23-30](https://github.com/user-attachments/assets/962cee86-de10-48ac-9f2a-d22bb9091444)  
+블로그 설명 : https://blog.naver.com/ache159/223181401708  
 오픈 채팅방 : https://open.kakao.com/o/g9rKiCzf   
 
 
